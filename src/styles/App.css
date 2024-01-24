@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, #root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+}
+
+.sideBar {
+  grid-area: sideBar;
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+.sideBar__topIcons, .sideBar__bottomIcons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sideBar__topIcons img {
+  cursor: pointer;
+  display: block;
+}
+.sideBar__topIcons img[alt=Logo] {
+  max-width: 40px;
+  height: auto;
+}
+.sideBar__topIcons img.navBtn {
+  max-width: 1.7rem;
+  height: auto;
+  stroke-width: 2;
+  margin-block: 10px;
+}
+.sideBar__topIcons__changeModes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.sideBar__topIcons__changeModes .backgroundHandler {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sideBar__topIcons__changeModes .backgroundHandler.light {
+  background-color: #34caa5;
+}
+.sideBar__topIcons__changeModes .backgroundHandler.dark {
+  background-color: #34caa5;
+}
+
+.header {
+  grid-area: header;
+  background-color: #fff;
+}
+
+.body {
+  grid-area: body;
+  background-color: #fff;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: max(3rem, 90px) 1fr 1fr;
+  grid-template-areas: "sideBar header header" "sideBar body body" "sideBar body body";
+}
+
+/*# sourceMappingURL=App.css.map */

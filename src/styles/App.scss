@@ -1,0 +1,14 @@
+@import "config";
+@import "home";
+
+
+.app{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: max(3rem, 90px) 1fr 1fr;
+  grid-template-areas:
+          'sideBar header header'
+          'sideBar body body'
+          'sideBar body body';
+}
