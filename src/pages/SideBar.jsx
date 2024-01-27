@@ -7,7 +7,12 @@ import divideSymbol from '../images/Divide Symbol.svg'
 import infoCircle from '../images/info-circle.svg'
 
 import star from '../images/star uncolored.svg'
+import starColored from '../images/star colored.svg'
 import moon from '../images/moon.svg'
+
+import back from "../images/back.svg"
+import gear from "../images/gear.svg"
+import logout from "../images/Logout.svg"
 
 function SideBar({lightMode, toggleLightMode}) {
     console.log(lightMode)
@@ -24,16 +29,24 @@ function SideBar({lightMode, toggleLightMode}) {
                     <img src={infoCircle} alt="Info Circle" className="navBtn"/>
 
                     <div className="sideBar__topIcons__changeModes">
-                        <div onClick={toggleLightMode} className={`backgroundHandler ${lightMode ? "light" : ""}`}>
-                            <img src={star} alt="" className="navBtn"/>
+                        <div onClick={!lightMode ? toggleLightMode : () => {
+                        }}
+                             className={`backgroundHandler ${lightMode ? "light" : ""}`}>
+                            <img src={lightMode? star : starColored} alt="" className="navBtn"/>
                         </div>
 
-                        <div onClick={toggleLightMode} className={`backgroundHandler ${!lightMode ? 'dark' : ''}`}>
+                        <div onClick={lightMode ? toggleLightMode : () => {
+                        }}
+                             className={`backgroundHandler ${!lightMode ? 'dark' : ''}`}>
                             <img src={moon} alt="" className="navBtn"/>
                         </div>
                     </div>
                 </div>
-                <div className="sideBar__bottomIcons"></div>
+                <div className="sideBar__bottomIcons">
+                    <img src={back} alt="Back Button" className="navBtn"/>
+                    <img src={gear} alt="Settings" className="navBtn"/>
+                    <img src={logout} alt="Logout Button" className="navBtn"/>
+                </div>
             </section>
         </>
     );

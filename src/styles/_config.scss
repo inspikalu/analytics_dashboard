@@ -1,10 +1,54 @@
-*{
+:root {
+  --color-primary: #bb372f;
+  --color-secondary: #3a3f51;
+
+  --color-alert-success: #00ac56;
+  --color-alert-error: #ff1f7d;
+  --color-alert-warning: #f5bf3d;
+
+  --color-grayscale-50: #fafafa;
+  --color-grayscale-100: #f5f5f5;
+  --color-grayscale-200: #e5e5e5;
+  --color-grayscale-300: #b2abab;
+  --color-grayscale-400: #a3a3a3;
+  --color-grayscale-500: #737373;
+  --color-grayscale-600: #525252;
+  --color-grayscale-700: #404040;
+  --color-grayscale-800: #262626;
+  --color-grayscale-900: #171717;
+
+  --color-purple: #6160DC;
+  --color-blue: #54C5EB;
+  --color-orange: #FFB74A;
+  --color-red: #FF4A55;
+
+  --color-text-green: #34CAA5;
+  --color-text-red: #ED544E;
+}
+
+@mixin theme($light-theme) {
+  @if ($light-theme) {
+
+  } @else {
+    $color-grey: darken(#f0f0f0, 10)
+  }
+}
+
+.app.light {
+  @include theme(true);
+}
+
+.app.dark {
+  @include theme(fale);
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body, #root{
+body, #root {
   width: 100vw;
   height: 100vh;
   background-color: #fafafa;

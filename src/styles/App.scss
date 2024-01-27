@@ -1,5 +1,7 @@
 @import "config";
-@import "home";
+@import "sidebar";
+@import "header";
+@import "body";
 
 
 .app{
@@ -7,8 +9,13 @@
   height: 100%;
   display: grid;
   grid-template-columns: max(3rem, 90px) 1fr 1fr;
+  //background-color: darken($color-grey,2);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--color-grayscale-50);
   grid-template-areas:
           'sideBar header header'
           'sideBar body body'
           'sideBar body body';
+
+  grid-template-rows: 5rem 1fr 1fr;
 }
