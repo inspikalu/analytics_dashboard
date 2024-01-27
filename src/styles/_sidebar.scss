@@ -89,3 +89,6 @@ img.navBtn {
   grid-area: body;
   background-color: var(--color-white);
 }
+
+@include screen-mobile{
+}

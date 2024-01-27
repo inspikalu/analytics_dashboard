@@ -4,7 +4,7 @@
 @import "body";
 
 
-.app{
+.app {
   width: 100%;
   height: 100%;
   display: grid;
@@ -18,4 +18,10 @@
           'sideBar body body';
 
   grid-template-rows: 5rem 1fr 1fr;
+}
+
+@include screen-mobile {
+  .app {
+    //grid-template-areas: 'header header .''body body .' 'body body .';
+  }
 }

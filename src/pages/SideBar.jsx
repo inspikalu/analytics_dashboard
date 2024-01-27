@@ -7,8 +7,9 @@ import divideSymbol from '../images/Divide Symbol.svg'
 import infoCircle from '../images/info-circle.svg'
 
 import star from '../images/star uncolored.svg'
-import starColored from '../images/star colored.svg'
+import starWhite from '../images/star white.svg'
 import moon from '../images/moon.svg'
+import moonWhite from '../images/moon white.svg'
 
 import back from "../images/back.svg"
 import gear from "../images/gear.svg"
@@ -32,13 +33,13 @@ function SideBar({lightMode, toggleLightMode}) {
                         <div onClick={!lightMode ? toggleLightMode : () => {
                         }}
                              className={`backgroundHandler ${lightMode ? "light" : ""}`}>
-                            <img src={lightMode? star : starColored} alt="" className="navBtn"/>
+                            <img src={lightMode ? starWhite : star} alt="" className="navBtn"/>
                         </div>
 
                         <div onClick={lightMode ? toggleLightMode : () => {
                         }}
                              className={`backgroundHandler ${!lightMode ? 'dark' : ''}`}>
-                            <img src={moon} alt="" className="navBtn"/>
+                            <img src={lightMode ? moon : moonWhite} alt="" className="navBtn"/>
                         </div>
                     </div>
                 </div>

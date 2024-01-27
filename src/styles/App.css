@@ -26,6 +26,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
 }
 
 body, #root {
@@ -62,6 +63,7 @@ body, #root {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
 }
 
 body, #root {
@@ -174,6 +176,7 @@ img.navBtn {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
 }
 
 body, #root {
@@ -239,6 +242,7 @@ body, #root {
   padding: 5px 6px;
   border-radius: 25px;
   gap: 10px;
+  position: relative;
 }
 .header__userId img {
   cursor: pointer;
@@ -251,7 +255,36 @@ body, #root {
 .header__userId div span:first-child {
   font-weight: bolder;
 }
+.header__userId__open {
+  position: absolute;
+  top: max(110%, 4rem);
+  right: 1px;
+  min-width: 10rem;
+  aspect-ratio: 3/2;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.7215686275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.header__userId__open.open {
+  display: flex;
+}
+.header__userId__open.closed {
+  display: none;
+}
 
+@media screen and (max-width: 724px) {
+  .header__userId > .details {
+    display: none;
+  }
+  .header__date > span {
+    display: none;
+  }
+}
 :root {
   --color-primary: #bb372f;
   --color-secondary: #3a3f51;
@@ -280,6 +313,7 @@ body, #root {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
 }
 
 body, #root {
@@ -348,6 +382,12 @@ th {
   gap: 10px;
   padding-inline: 10px 12px;
   padding-block: 10px;
+  overflow-y: scroll;
+  align-content: space-between;
+}
+.body section {
+  width: auto;
+  height: auto;
 }
 .body__stats {
   display: grid;
@@ -498,7 +538,6 @@ th {
   gap: 10px;
 }
 .statBox__insight span.pill {
-  color: var(--color-alert-success);
   display: flex;
   padding: 0.25rem 0.5rem;
   justify-content: center;
@@ -508,12 +547,22 @@ th {
 }
 .statBox__insight span.pill.green {
   background: rgba(52, 202, 165, 0.12);
+  color: var(--color-alert-success);
+}
+.statBox__insight span.pill.red {
+  background: rgba(237, 84, 78, 0.12);
+  color: var(--color-alert-error);
 }
 .statBox__insight span.pill img {
   aspect-ratio: 1/1;
   width: 1rem;
 }
 
+@media screen and (max-width: 724px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+}
 .app {
   width: 100%;
   height: 100%;

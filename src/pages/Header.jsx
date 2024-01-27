@@ -3,9 +3,15 @@ import calendar from "../images/calendar.svg"
 import notification from '../images/notification.svg'
 import profile from '../images/profile.png'
 import arrowDown from "../images/arrow-down.svg"
+import {useState} from "react";
 
 function Header() {
     const todayDate = new Date();
+
+    const [isUserIdOpen, setIsUserIdOpen] = useState(false);
+    const handlesetIsUserOpen = function () {
+        setIsUserIdOpen(!isUserIdOpen);
+    }
 
     const getThisMonth = function () {
         switch (todayDate.getMonth()) {
@@ -53,13 +59,21 @@ function Header() {
                 <div className="header__notification">
                     <img src={notification} alt="Notification Icon" style={{width: '16px', height: 'auto'}}/>
                 </div>
-                <div className="header__userId">
+                <div className="header__userId" onClick={handlesetIsUserOpen}>
                     <img src={profile} alt="" style={{width: '38px', height: '38px', borderRadius: "50%"}}/>
                     <div className="details">
                         <span className="name">Justin Bergson</span>
                         <span className="email">justin@gmail.com</span>
                     </div>
                     <img src={arrowDown} alt="Arrow Dine" style={{width: '14px', height: '8px'}}/>
+
+                    <div className={`header__userId__open ${isUserIdOpen ? 'open' : 'closed'}`}>
+                        <img src={profile} alt="" style={{width: '50px', aspectRatio: '1/1'}}/>
+                        <div className="details">
+                            <span className="name">Justin Bergson</span>
+                            <span className="email">justin@gmail.com</span>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

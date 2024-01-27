@@ -1,4 +1,5 @@
 @import "config";
+
 .header {
   background-color: var(--color-grayscale-50);
   display: flex;
@@ -62,6 +63,7 @@
     padding: 5px 6px;
     border-radius: 25px;
     gap: 10px;
+    position: relative;
 
     img {
       cursor: pointer;
@@ -76,5 +78,39 @@
         font-weight: bolder;
       }
     }
+
+    &__open {
+      position: absolute;
+      top: max(110%, 4rem);
+      right: 1px;
+      min-width: 10rem;
+      aspect-ratio: 3/2;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 1px 1px 8px 1px #000000b8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+
+      &.open {
+        display: flex;
+      }
+
+      &.closed {
+        display: none;
+      }
+    }
+
+  }
+}
+
+@include screen-mobile {
+  .header__userId > .details {
+    display: none;
+  }
+  .header__date > span {
+    display: none;
   }
 }

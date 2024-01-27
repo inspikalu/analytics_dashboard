@@ -65,8 +65,14 @@ th {
   gap: 10px;
   padding-inline: 10px 12px;
   padding-block: 10px;
+  overflow-y: scroll;
+  align-content: space-between;
+  section{
+    width: auto;
+    height: auto;
+  }
 
-  &__stats{
+  &__stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -264,10 +270,15 @@ th {
 
     span.pill {
 
-      &.green{
+      &.green {
         background: rgba(52, 202, 165, 0.12);
+        color: var(--color-alert-success);
       }
-    color: var(--color-alert-success);
+
+      &.red {
+        background: rgba(237, 84, 78, 0.12);
+        color: var(--color-alert-error)
+      }
 
       display: flex;
       padding: 0.25rem 0.5rem;
@@ -283,5 +294,11 @@ th {
         width: 1rem;
       }
     }
+  }
+}
+
+@include screen-mobile {
+  .body {
+    grid-template-columns: 1fr;
   }
 }
